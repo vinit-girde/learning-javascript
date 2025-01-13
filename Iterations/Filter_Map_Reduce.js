@@ -80,7 +80,7 @@ const bookNames = books.map((item) => item.title);
 
 // -----------------------------------------------------------
 
-// reduce() -->
+// reduce() --> The reduce() function in JavaScript is a powerful array method that allows you to accumulate or "reduce" an array to a single value. The initial value of accumulator is 0 but it can change to waht we pass to it.
 
 const myNumsArr = [1, 2, 3];
 
