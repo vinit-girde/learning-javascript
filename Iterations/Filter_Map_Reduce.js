@@ -62,11 +62,11 @@ const booksPublishedAfter = books.filter((book) => book.publish > 2000);
 
 // -------------------------------------------------------------------
 
-// map() ==> Creates new array with result of callback on every element of array.
+// map() ==> Creates new array with result of callback function on every element of array.
 
 const bookNames = books.map((item) => item.title);
 
-console.log(bookNames);
+// console.log(bookNames);
 
 /*
     [
@@ -77,3 +77,54 @@ console.log(bookNames);
         'Book Nine'
     ]
 */
+
+// -----------------------------------------------------------
+
+// reduce() -->
+
+const myNumsArr = [1, 2, 3];
+
+const myTotal = myNumsArr.reduce(function (accumulator, currval) {
+  //   console.log(`accumulator: ${accumulator} and currval: ${currval}`);
+  return accumulator + currval;
+}, 0);
+
+// console.log(myTotal) // 6
+
+const totalOfArr = myNumsArr.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+
+// console.log(totalOfArr); // 6
+/*
+    accumulator: 0 and currval: 1
+    accumulator: 1 and currval: 2
+    accumulator: 3 and currval: 3
+*/
+
+const shoppingCart = [
+  {
+    itemName: "js course",
+    price: 2999,
+  },
+  {
+    itemName: "py course",
+    price: 999,
+  },
+  {
+    itemName: "mobile dev course",
+    price: 5999,
+  },
+  {
+    itemName: "data science course",
+    price: 12999,
+  },
+];
+
+const priceToPay = shoppingCart.reduce(
+  (accumulator, item) => accumulator + item.price,
+  0
+);
+
+console.log(priceToPay); // 22996
