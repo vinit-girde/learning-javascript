@@ -14,6 +14,7 @@ function changeBgColor(colorName) {
       break;
     case "white":
       mainBody.style.backgroundColor = colorName;
+      mainBody.style.color = "#000";
       break;
     case "blue":
       mainBody.style.backgroundColor = colorName;

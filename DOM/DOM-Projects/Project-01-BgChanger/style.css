@@ -1,7 +1,10 @@
 html {
   margin: 0;
 }
-
+body {
+  background: #211234;
+  color: #fff;
+}
 span {
   display: block;
 }
