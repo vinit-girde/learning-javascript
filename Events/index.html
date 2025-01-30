@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS EVENTS</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="170px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="170px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="170px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="170px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="170px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("owl").onclick = function () {
+    //   alert("owl clicked");
+    // };
+
+    /*
+        Event propagation in JavaScript refers to the order in which events are handled in the DOM (Document Object Model) when an event occurs on an element.
+
+        Event Propagation has 2 phases : Event Bubbling and Event Capturing.
+
+        Event Bubbling => Bubbling Phase (Bubbling Up)
+        When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+
+        By default, most events bubble up through the DOM, meaning the innermost (target) element receives the event first, and then it propagates up to its parent elements and so on, up to the document.
+
+        Event Capturing ==> Capturing Phase (Trickling Down)
+        The event starts at the top of the DOM tree (the document) and trickles down to the target element. It is also known as capture phase.
+
+        // Controlling the propagation :
+
+        event.stopPropagation():
+        Prevents the event from bubbling or capturing. It stops the event from being propagated further.
+
+        event.stopImmediatePropagation():
+        This prevents the event from bubbling up or capturing, but also prevents other listeners on the same element from being triggered.
+
+    */
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log("CLicked on ul tag");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log("CLicked on owl image");
+    //     // event.stopPropagation(); // will not call parent function of owl id element
+    //   },
+    //   false
+    // );
+
+    // CLicked on owl image
+    // CLicked on ul tag
+
+    // First it runs on click event on owl image click function and then propagates to it's parent and calls ul tag click function.
+
+    // For event capturing , we can set third parameter as true so that will execute events propagation in top to down manner.
+
+    // We can stop the propagation using e.stopPropagation() method.
+    // CLicked on owl image will be the output of onclick function.
+
+    // event.preventDefault() is a method in JavaScript that stops the default action associated with an event from being triggered.
+
+    document.getElementById("google").addEventListener(
+      "click",
+      function (e) {
+        e.preventDefault();
+        // e.stopPropagation()
+        console.log("google clicked");
+      },
+      false
+    );
+
+    // Task : On click of any image remove that image from web page.
+
+    document
+      .querySelector("#images")
+      .addEventListener("click", function (event) {
+        console.log(event);
+        console.log(event.target);
+        // To check if clicked element is only img tag
+        if (event.target.tagName === "IMG") {
+          let removedItem = event.target.parentNode;
+          removedItem.remove();
+        }
+      });
+  </script>
+</html>
