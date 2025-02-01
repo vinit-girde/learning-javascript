@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Timeout & Interval</title>
+  </head>
+  <body style="background-color: #414141; color: #fff">
+    <div>
+      <h1>Hello World !</h1>
+      <button id="stop">Stop</button>
+    </div>
+  </body>
+  <script>
+    const printHello = function () {
+      console.log("Hello");
+    };
+    const changeText = function () {
+      document.querySelector("h1").innerHTML = "Welcome User!";
+    };
+
+    const changeMe = setTimeout(changeText, 2000);
+
+    // if user clicks on button before 2sec then timeout() will not work due to clear timeout()
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(changeMe);
+      console.log("STOPPED");
+    });
+  </script>
+</html>
