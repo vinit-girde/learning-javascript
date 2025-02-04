@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Interval</title>
+  </head>
+  <body style="background-color: #414141; color: #fff">
+    <div>
+      <h1>Hello World !</h1>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+  </body>
+  <script>
+    // setInterval runs after certain time interval until we clear it.
+    // setInterval(() => {
+    //   console.log("Hellooo", Date.now());
+    // }, 1000);
+    // Hello with certain date in number format will be logged every one sec.
+
+    const logName = function (string) {
+      console.log(`${string}`, Date.now());
+    };
+
+    // hold it in variable for referencing
+    let intervalFunc;
+
+    // To clear this setInterval() we have use clearTimeout()
+    // clearInterval(intervalFunc);
+
+    // To call this function on start and stop
+    document.querySelector("#start").addEventListener("click", function () {
+      intervalFunc = setInterval(logName, 1000, "Welcome user!");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      console.log("stopppped");
+      clearInterval(intervalFunc);
+    });
+  </script>
+</html>
