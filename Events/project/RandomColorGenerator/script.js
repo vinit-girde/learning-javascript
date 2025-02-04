@@ -20,12 +20,17 @@ function changeBackground() {
 
 // Function to change background color after every start btn click
 const onStartHandler = function () {
-  intervalId = setInterval(() => {
-    changeBackground();
-  }, 1000);
+  // Check if an interval is already running before starting a new one
+  if (!intervalId) {
+    intervalId = setInterval(() => {
+      changeBackground();
+    }, 1000);
+  }
 };
 
 // Function to stop background color change after stop btn click
 const stopHandler = function () {
   clearInterval(intervalId);
+  // reset value to null
+  intervalId = null;
 };
