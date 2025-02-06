@@ -112,7 +112,7 @@ consumePromiseFour();
 
 // getAllUsers();
 
-fetch("https://api.github.com/users/hiteshchoudhary")
+fetch("https://api.github.com/users/vinit-girde")
   .then((response) => {
     return response.json();
   })
