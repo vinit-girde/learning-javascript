@@ -1,3 +1,5 @@
+// We can have properties in object as writable as false which means we can't override it values and make enumerable as false i.e that property will not be iterable in object.
+
 const descripter = Object.getOwnPropertyDescriptor(Math, "PI");
 
 console.log(descripter);
