@@ -1,6 +1,6 @@
 // Objects in js can be created using 2 ways: Object.create(),let obj={}.
 // Objects  consists of key value pair.
-// singleton --> Object are only singleton when created using construtor.
+// singleton --> Object are only singleton when created using construtor. i.e it has only one instance of it's kind.
 // Object.create is used in creating object using constructor.
 
 // object literals i.e -> obj={}

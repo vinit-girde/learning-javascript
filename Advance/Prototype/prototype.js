@@ -1,6 +1,6 @@
 // In JavaScript, a prototype is an object from which other objects inherit properties. Every JavaScript function (which can act as a constructor) has a prototype property, and this property is used to set up prototype chaining for objects created using that function.
 
-// In JS everything is object .i.e Object is superset and everything derives through object
+// In JS everything is object .i.e Object is superset and everything derives through object.
 
 let myHeros = ["thor", "spiderman"];
 
@@ -21,10 +21,10 @@ Array.prototype.heyUserX = function () {
   console.log(`userX says hello`);
 };
 
-// heroPower.userX()
-// myHeros.userX()
-// myHeros.heyUserX()
-// heroPower.heyUserX()
+heroPower.userX(); // userX is present in all objects
+myHeros.userX(); // userX is present in all objects
+myHeros.heyUserX(); // userX says hello
+// heroPower.heyUserX(); // TypeError: heroPower.heyUserX is not a function
 
 // Add an function to String Object which calculates the length and prints true length of any passed string.
 
